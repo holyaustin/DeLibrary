@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react';
 import Navbar from '../components/navbar';
 import actions from '../data/myindex';
 import Image from 'next/image'
-import banner from '../images/l1.png'
+import banner from '../images/l1.jpg'
 
 let Web3 = require('web3');
 
