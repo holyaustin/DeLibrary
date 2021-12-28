@@ -1,4 +1,5 @@
 module.exports = {
+  webpack5: true,
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback.fs = false;
@@ -13,7 +14,7 @@ module.exports = {
     ignoreBuildErrors: true,
  },
   reactStrictMode: true,
-  exportTrailingSlash: true,
+ // exportTrailingSlash: true,
 }
 
 
