@@ -1,5 +1,5 @@
 module.exports = {
-  webpack5: true,
+  webpack5: false,
   webpack: (config, { isServer }) => {
     config.module.rules.push(
       {
