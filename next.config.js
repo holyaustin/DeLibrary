@@ -9,13 +9,13 @@ module.exports = {
           name: '[name].[ext]', 
         },
 
-        use: [
-          options.defaultLoaders.babel,
+  //      use: [
+  //        options.defaultLoaders.babel,
    //       {
    //         loader: 'file-loader',
    //         options: pluginOptions.options,
    //       },
-        ]
+  //      ]
         
       }
     )
