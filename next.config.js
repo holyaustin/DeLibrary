@@ -67,12 +67,6 @@ module.exports = {
 		extensions: ['.js', '.jsx']
 	}
 };
-@ndelangen ndelangen closed this on 6 Sep 2017
-@unutoiul
- Tip
-unutoiul commented on 26 Oct 2017
-Hi Guys,
 
-If i have a reposito
 
 
