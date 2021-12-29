@@ -4,6 +4,7 @@ module.exports = {
     config.module.rules.push(
       {
         test: /\.(jpe?g|png|gif|woff|woff2|mp4|pdf|svg)(\?[a-z0-9=.]+)?$/,
+        loader: 'file-loader',
         options: {
           name: '[path][name].[ext]',
       },
