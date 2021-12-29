@@ -5,12 +5,11 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|mdx|woff2|mp4|pdf|svg)(\?[a-z0-9=.]+)?$/,
         loader: 'file-loader', 
-        use: [
-          options.defaultLoaders.babel,
-          
+        use: [      
           {
-            loader: 'file-loader',
-            options: pluginOptions.options,
+              options: {
+              name: '[path][name].[ext]',
+            }
           },
         ]
         
