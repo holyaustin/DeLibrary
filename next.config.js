@@ -1,6 +1,39 @@
-var path = require('path');
-
 module.exports = {
+  experimental: { granularChunks: true },
+  webpack5: false,
+  webpack: (config, {  buildId, dev, isServer, defaultLoaders, webpack }) => {
+    config.module.rules.push(
+      {
+        test: /\.(jpe?g|png|gif|woff|woff2|mp4|pdf|svg)(\?[a-z0-9=.]+)?$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+      },
+    },
+    )
+
+    if (!isServer) {
+      //config.resolve.fallback.fs = false;
+    }
+    return config;
+  },
+  eslint: {
+    // Warning: Dangerously allow production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
+  trailingSlash: true,
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+ },
+  reactStrictMode: true,
+ // exportTrailingSlash: true,
+}
+
 	module: {
 		rules: [
 			// Transform all ES6 files to plain old ES5.
@@ -53,9 +86,5 @@ module.exports = {
 					},
 				],
 			},
-		],
-	},
-};
-
-
-
+    ]
+  }
