@@ -55,17 +55,6 @@ module.exports = {
 			},
 		],
 	},
-	/**
-	 * Resolve import paths from global.SRCDIR
-	 * @see  http://moduscreate.com/es6-es2015-import-no-relative-path-webpack/
-	 */
-	resolve: {
-		modules: [
-			path.resolve(__dirname, '../../src'),
-			path.resolve(__dirname, '../../node_modules'),
-		],
-		extensions: ['.js', '.jsx']
-	}
 };
 
 
