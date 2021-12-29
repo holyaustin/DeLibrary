@@ -9,7 +9,7 @@ module.exports = {
           //options.defaultLoaders.babel,
           {
             loader: 'file-loader',
-            options: pluginOptions.options,
+            //options: pluginOptions.options,
             options: {
               name: '[name].[ext]'}
           },
