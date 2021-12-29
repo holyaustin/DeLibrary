@@ -3,16 +3,8 @@ module.exports = {
   webpack: (config, {  buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.module.rules.push(
       {
-        test: /\.(jpe?g|png|gif|mdx|woff2|mp4|pdf|svg)(\?[a-z0-9=.]+)?$/,
-        loader: 'file-loader', 
-        use: [      
-          {
-              options: {
-              name: '[path][name].[ext]',
-            }
-          },
-        ]
-        
+        test: /\.(jpe?g|png|gif|woff|woff2|mp4|pdf|svg)(\?[a-z0-9=.]+)?$/,
+        loader: 'url-loader?limit=100000' 
       }
     )
 
@@ -21,6 +13,20 @@ module.exports = {
     }
     return config;
   },
+
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif|woff|avi|mp4|pdf|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      },
+    ],
+  },
+
+
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
